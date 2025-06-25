@@ -1,0 +1,110 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+MockJuice - SwiftUI Development Rules
+
+PROJECT CONTEXT
+
+MockJuice is a revolutionary theory test learning app. Independent, bootstrapped, moving fast. Target: iOS 17+ only.
+
+CRITICAL CONSTRAINTS
+
+NEVER modify files without explicit consent
+ONLY work on the exact feature requested
+NO duplicated files or functionalities
+SWIFT/SwiftUI ONLY - absolutely no other languages
+iOS 17+ minimum target - use latest features
+Native iOS only - no cross-platform considerations
+Production-ready code only - no TODOs, placeholders, or incomplete implementations
+CODE QUALITY STANDARDS
+
+Write bug-free, secure, performant, and maintainable code
+Prioritize readability and clarity
+Follow Apple's Human Interface Guidelines
+Use proper Swift 6 conventions and naming
+Implement complete functionality - no partial solutions
+Include proper error handling everywhere
+Add comprehensive documentation comments
+SwiftUI ARCHITECTURE RULES
+
+State Management
+
+Use @Observable for view models: @Observable final class MyViewModel
+NO @State for view model observation - use let viewModel: MyViewModel
+Use @State ONLY for local view-managed state
+Use @Environment for app-wide or large-section state
+Pass dependencies through constructors for reference types
+Use @Binding only when child needs write access to parent's value type state
+Pass values directly for read-only access
+Data Flow & Architecture
+
+Implement MVVM pattern with @Observable view models
+Use the Observation framework for reactive UI updates
+Separate business logic from UI completely
+Create dedicated service layers for data operations
+Implement proper dependency injection patterns
+Performance Optimization
+
+Use LazyVStack, LazyHStack, LazyVGrid for large datasets
+Implement stable identifiers in ForEach loops
+Avoid unnecessary view recomputations
+Use @ViewBuilder for complex view compositions
+Implement proper image caching and lazy loading
+UI/UX Excellence
+
+Follow Apple's design principles religiously
+Implement comprehensive accessibility support
+Support Dynamic Type and appearance modes
+Use native iOS navigation patterns
+Implement proper loading states and error handling
+Add haptic feedback where appropriate
+MockJuice SPECIFIC PATTERNS
+
+Learning App Features
+
+Question/answer flow systems
+Progress tracking and analytics
+Scoring and performance metrics
+Study session management
+Adaptive learning algorithms
+Offline capability for downloaded content
+SWIFT 6 SPECIFIC REQUIREMENTS
+
+Use latest concurrency features (async/await)
+Implement proper actor isolation where needed
+Use typed throws for error handling
+Leverage new Swift 6 language features
+Follow strict concurrency guidelines
+TESTING REQUIREMENTS
+
+Write unit tests for all ViewModels and business logic
+Create UI tests for critical user journeys
+Implement comprehensive Preview providers
+Test error scenarios and edge cases
+Ensure accessibility compliance
+PROHIBITED PRACTICES
+
+No force unwrapping (!) unless absolutely necessary
+No magic numbers or hardcoded strings
+No massive view files - break into components
+No view models in views beyond the main one
+No direct Core Data in views
+No third-party dependencies without explicit approval
+REQUIRED DOCUMENTATION
+
+Document all public APIs
+Add inline comments for complex logic
+Include usage examples in documentation
+Document architectural decisions
+Maintain README for each major feature
+WHEN RESPONDING TO REQUESTS
+
+Confirm understanding of the exact requirement
+Outline your implementation plan in pseudocode
+Ask for clarification if anything is ambiguous
+Implement complete, working solution
+Test the implementation thoroughly
+Provide usage instructions if needed
+Remember: We're building a premium educational app that will compete with established players. Code quality, user experience, and performance are non-negotiable.
