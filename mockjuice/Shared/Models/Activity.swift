@@ -21,9 +21,9 @@ struct Activity: Identifiable, Codable {
     
     static let sampleData: [Activity] = [
         Activity(
-            title: "Questions Answered",
-            description: "Total questions completed today",
-            iconName: "questionmark.circle.fill",
+            title: "Theory Mastery",
+            description: "Questions conquered today",
+            iconName: "brain.head.profile",
             color: "blue",
             value: "47",
             change: "+12",
@@ -31,8 +31,8 @@ struct Activity: Identifiable, Codable {
             date: Date()
         ),
         Activity(
-            title: "Study Time",
-            description: "Minutes spent studying",
+            title: "Learning Time",
+            description: "Minutes in the mockjuice zone",
             iconName: "clock.fill",
             color: "green",
             value: "2h 15m",
@@ -41,8 +41,8 @@ struct Activity: Identifiable, Codable {
             date: Date()
         ),
         Activity(
-            title: "Accuracy Rate",
-            description: "Percentage of correct answers",
+            title: "Success Rate",
+            description: "Your mockjuice accuracy",
             iconName: "target",
             color: "orange",
             value: "84%",
@@ -51,8 +51,8 @@ struct Activity: Identifiable, Codable {
             date: Date()
         ),
         Activity(
-            title: "Streak Days",
-            description: "Consecutive days of practice",
+            title: "Learning Streak",
+            description: "Days of consistent progress",
             iconName: "flame.fill",
             color: "red",
             value: "12",
@@ -61,9 +61,9 @@ struct Activity: Identifiable, Codable {
             date: Date()
         ),
         Activity(
-            title: "Tests Completed",
-            description: "Mock tests finished this week",
-            iconName: "checkmark.circle.fill",
+            title: "MockJuice Tests",
+            description: "Premium tests completed",
+            iconName: "checkmark.seal.fill",
             color: "purple",
             value: "3",
             change: "+2",
@@ -71,8 +71,8 @@ struct Activity: Identifiable, Codable {
             date: Date()
         ),
         Activity(
-            title: "Points Earned",
-            description: "Total points accumulated",
+            title: "Juice Points",
+            description: "Your mockjuice rewards",
             iconName: "star.fill",
             color: "yellow",
             value: "1,250",

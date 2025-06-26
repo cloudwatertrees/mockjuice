@@ -37,13 +37,13 @@ struct ActivityView: View {
             .refreshable {
                 await refreshActivity()
             }
-            .navigationTitle("Activity")
+            .navigationTitle("Progress")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Export", systemImage: "square.and.arrow.up") {
                         HapticManager.shared.lightImpact()
-                        appState.showToast(message: "Exporting activity data...")
+                        appState.showToast(message: "Exporting progress data...")
                     }
                 }
             }
@@ -95,7 +95,7 @@ struct ActivityView: View {
     
     private var progressChart: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Weekly Progress")
+            Text("mockjuice Journey")
                 .font(.headline)
                 .fontWeight(.semibold)
             
@@ -134,39 +134,39 @@ struct ActivityView: View {
                 GridItem(.flexible())
             ], spacing: 12) {
                 QuickActionButton(
-                    title: "Start Practice",
+                    title: "Continue Learning",
                     icon: "play.circle.fill",
                     color: .green
                 ) {
                     HapticManager.shared.mediumImpact()
-                    appState.showToast(message: "Starting practice session...")
+                    appState.showToast(message: "Continuing your mockjuice journey...")
                 }
                 
                 QuickActionButton(
-                    title: "Take Mock Test",
-                    icon: "doc.text.fill",
+                    title: "MockJuice Test",
+                    icon: "checkmark.seal.fill",
                     color: .blue
                 ) {
                     HapticManager.shared.mediumImpact()
-                    appState.showToast(message: "Loading mock test...")
+                    appState.showToast(message: "Loading MockJuice experience...")
                 }
                 
                 QuickActionButton(
-                    title: "Review Mistakes",
+                    title: "Review Weak Areas",
                     icon: "exclamationmark.triangle.fill",
                     color: .orange
                 ) {
                     HapticManager.shared.mediumImpact()
-                    appState.showToast(message: "Opening mistake review...")
+                    appState.showToast(message: "Analyzing your weak spots...")
                 }
                 
                 QuickActionButton(
-                    title: "Study Plan",
+                    title: "Learning Plan",
                     icon: "calendar.circle.fill",
                     color: .purple
                 ) {
                     HapticManager.shared.mediumImpact()
-                    appState.showToast(message: "Opening study plan...")
+                    appState.showToast(message: "Opening personalized plan...")
                 }
             }
         }
@@ -186,7 +186,7 @@ struct ActivityView: View {
         // Simulate API call
         try? await Task.sleep(nanoseconds: 1_500_000_000)
         
-        appState.showToast(message: "Activity data refreshed")
+        appState.showToast(message: "Progress data refreshed")
         isRefreshing = false
         HapticManager.shared.success()
     }

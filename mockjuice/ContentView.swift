@@ -35,19 +35,19 @@ struct ContentView: View {
                 .badge(Tab.summary.badgeCount ?? 0)
                 .tag(Tab.summary)
             
+            DiscoverView()
+                .tabItem {
+                    Image(systemName: Tab.discover.icon)
+                    Text(Tab.discover.rawValue)
+                }
+                .tag(Tab.discover)
+            
             SettingsView()
                 .tabItem {
                     Image(systemName: Tab.settings.icon)
                     Text(Tab.settings.rawValue)
                 }
                 .tag(Tab.settings)
-            
-            ProfileView()
-                .tabItem {
-                    Image(systemName: Tab.profile.icon)
-                    Text(Tab.profile.rawValue)
-                }
-                .tag(Tab.profile)
         }
         .tint(.accentColor)
         .overlay(alignment: .top) {

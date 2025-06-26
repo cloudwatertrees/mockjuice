@@ -20,46 +20,46 @@ struct Category: Identifiable, Codable {
     
     static let sampleData: [Category] = [
         Category(
-            title: "Theory Test",
-            subtitle: "Practice questions and mock tests",
+            title: "Theory Test Fundamentals",
+            subtitle: "Master the essential knowledge for your theory test",
             iconName: "book.fill",
-            color: "blue",
+            color: "green",
             itemCount: 850,
             isNew: false,
             items: CategoryItem.theoryItems
         ),
         Category(
-            title: "Hazard Perception",
-            subtitle: "Interactive video scenarios",
+            title: "Hazard Perception Training",
+            subtitle: "Develop your hazard spotting skills with interactive videos",
             iconName: "eye.fill",
-            color: "orange",
+            color: "red",
             itemCount: 45,
             isNew: true,
             items: CategoryItem.hazardItems
         ),
         Category(
-            title: "Highway Code",
-            subtitle: "Rules and regulations",
+            title: "Highway Code Mastery",
+            subtitle: "Complete guide to UK traffic rules and regulations",
             iconName: "road.lanes",
-            color: "green",
+            color: "blue",
             itemCount: 320,
             isNew: false,
             items: CategoryItem.highwayItems
         ),
         Category(
-            title: "Road Signs",
-            subtitle: "Learn all UK road signs",
+            title: "Road Signs Expert",
+            subtitle: "Learn and recognize all UK road signs",
             iconName: "triangle.fill",
-            color: "red",
+            color: "orange",
             itemCount: 180,
             isNew: false,
             items: CategoryItem.signItems
         ),
         Category(
-            title: "Mock Tests",
-            subtitle: "Full practice examinations",
-            iconName: "checkmark.circle.fill",
-            color: "purple",
+            title: "The MockJuice Experience",
+            subtitle: "Premium practice tests with detailed explanations",
+            iconName: "checkmark.seal.fill",
+            color: "red",
             itemCount: 25,
             isNew: true,
             items: CategoryItem.mockItems

@@ -53,26 +53,26 @@ class AppState {
 }
 
 enum Tab: String, CaseIterable {
-    case browse = "Browse"
-    case activity = "Activity"
-    case summary = "Summary"
+    case browse = "Practice"
+    case activity = "Progress"
+    case summary = "Challenges"
+    case discover = "Discover"
     case settings = "Settings"
-    case profile = "Profile"
     
     var icon: String {
         switch self {
-        case .browse: return "square.grid.2x2"
+        case .browse: return "play.fill"
         case .activity: return "chart.line.uptrend.xyaxis"
-        case .summary: return "doc.text"
-        case .settings: return "gearshape"
-        case .profile: return "person.circle"
+        case .summary: return "target"
+        case .discover: return "safari.fill"
+        case .settings: return "gearshape.fill"
         }
     }
     
     var badgeCount: Int? {
         switch self {
         case .activity: return 3
-        case .summary: return 1
+        case .summary: return 2
         default: return nil
         }
     }

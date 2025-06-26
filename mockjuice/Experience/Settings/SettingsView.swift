@@ -98,6 +98,88 @@ struct SettingsView: View {
                     )
                 }
                 
+                // MockJuice Section
+                Section("MockJuice Experience") {
+                    SettingsToggle(
+                        title: "Challenge Notifications",
+                        subtitle: "Get notified about new daily challenges",
+                        isOn: Binding(
+                            get: { appState.settings.notifications.enablePushNotifications },
+                            set: { appState.settings.notifications.enablePushNotifications = $0 }
+                        ),
+                        icon: "target",
+                        color: .purple
+                    )
+                    
+                    SettingsToggle(
+                        title: "Streak Reminders",
+                        subtitle: "Daily reminders to maintain your learning streak",
+                        isOn: Binding(
+                            get: { appState.settings.notifications.dailyReminders },
+                            set: { appState.settings.notifications.dailyReminders = $0 }
+                        ),
+                        icon: "flame.fill",
+                        color: .orange
+                    )
+                    
+                    SettingsToggle(
+                        title: "Juice Points Celebrations",
+                        subtitle: "Celebrate when you earn points and achievements",
+                        isOn: Binding(
+                            get: { appState.settings.study.hapticFeedback },
+                            set: { appState.settings.study.hapticFeedback = $0 }
+                        ),
+                        icon: "star.fill",
+                        color: .yellow
+                    )
+                    
+                    SettingsPicker(
+                        title: "Difficulty Level",
+                        subtitle: "Adjust the challenge level for questions",
+                        selection: Binding(
+                            get: { appState.settings.appearance.colorScheme },
+                            set: { appState.settings.appearance.colorScheme = $0 }
+                        ),
+                        options: ["Beginner", "Intermediate", "Advanced"],
+                        icon: "dial.high.fill",
+                        color: .red
+                    ) { newValue in
+                        HapticManager.shared.selection()
+                        appState.showToast(message: "Difficulty set to \(newValue)")
+                    }
+                    
+                    Button(action: {
+                        HapticManager.shared.mediumImpact()
+                        appState.showToast(message: "Opening mockjuice community...")
+                    }) {
+                        HStack(spacing: 12) {
+                            Image(systemName: "person.3.fill")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .frame(width: 28, height: 28)
+                                .background(RoundedRectangle(cornerRadius: 6).fill(.blue))
+                            
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Join Community")
+                                    .font(.body)
+                                    .foregroundColor(.primary)
+                                
+                                Text("Connect with other learners")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.right")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.vertical, 2)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+                
                 // Account Section
                 Section("Account") {
                     Button("Reset All Settings") {

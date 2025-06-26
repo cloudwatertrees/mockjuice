@@ -43,9 +43,9 @@ struct BrowseView: View {
             .refreshable {
                 await refreshCategories()
             }
-            .navigationTitle("Browse")
+            .navigationTitle("Practice")
             .navigationBarTitleDisplayMode(.large)
-            .searchable(text: $searchText, prompt: "Search categories...")
+            .searchable(text: $searchText, prompt: "Search practice categories...")
             .onChange(of: searchText) { oldValue, newValue in
                 if !newValue.isEmpty {
                     HapticManager.shared.selection()
@@ -62,7 +62,7 @@ struct BrowseView: View {
         // Simulate API call
         try? await Task.sleep(nanoseconds: 1_000_000_000)
         
-        appState.showToast(message: "Categories updated")
+        appState.showToast(message: "Practice content refreshed")
         isRefreshing = false
         HapticManager.shared.success()
     }
